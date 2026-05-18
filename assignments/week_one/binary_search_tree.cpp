@@ -64,10 +64,6 @@ void PrintLeafNodes(Node *root){
         PrintLeafNodes(root->right);
 }
 
-
-
-
-
 int main(){
     //Creating root node
     Node* root = nullptr;
