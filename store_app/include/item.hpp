@@ -11,8 +11,8 @@ protected:
     std::string m_type;
 
 public:
-    Item(size_t ID, float WEIGHT, float HEIGHT, std::string& NAME,
-        std::string& TYPE);
+    Item(size_t ID, float WEIGHT, float HEIGHT, std::string &NAME,
+        std::string &TYPE);
 
     virtual void GetItemInfo() const = 0;
 };

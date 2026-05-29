@@ -2,6 +2,7 @@
 
 #include <cstddef>
 #include <string>
+#include <iostream>
 
 class User{
     protected:

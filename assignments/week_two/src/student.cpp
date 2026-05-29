@@ -12,3 +12,12 @@ Student::Student(
         m_balance(std::move(BALANCE)){
 
 }
+
+void Student::GetUserInfo() const {
+    std::cout << "Name:" << m_name << "\n";
+    std::cout << "Email:" << m_email << "\n";
+    std::cout << "Subject:" << m_subject << "\n";
+    std::cout << "Age:" << m_age << "\n";
+    std::cout << "ID:" << m_id << "\n";
+    std::cout << "Balance:" << m_balance << "\n";
+}

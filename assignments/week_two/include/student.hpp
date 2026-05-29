@@ -17,5 +17,6 @@ class Student: public User{
             float BALANCE
         );
 
-        //void GetUserInfo() const override;
+        void GetUserInfo() const override;
+        
 };
