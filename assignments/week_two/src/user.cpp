@@ -1,0 +1,16 @@
+#include "user.hpp"
+
+User::User(
+    std::string &NAME,
+    std::string &EMAIL,
+    std::string &SUBJECT,
+
+    int AGE,
+    size_t ID
+):  m_name(std::move(NAME)),
+    m_email(std::move(EMAIL)),
+    m_subject(std::move(SUBJECT)),
+    m_age(std::move(AGE)),
+    m_id(std::move(ID)){
+
+}
