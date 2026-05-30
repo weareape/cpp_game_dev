@@ -12,7 +12,7 @@ class Store{
         std::unordered_map<std::string, Item*> m_items;
 
     public:
-        Store(size_t, std::string &NAME, std::unordered_map<std::string, Item* > &ITEMS);
+        Store(size_t ID, std::string &NAME, std::unordered_map<std::string, Item* > &ITEMS);
 
         virtual void GetAllItems() const = 0;
         virtual void AddItem(std::string &item_name, Item* item) = 0;
