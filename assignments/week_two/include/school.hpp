@@ -28,6 +28,7 @@ class School{
             int YEARESTABLISHED,
         
             std::unordered_map<std::string, Student* > &STUDENTS);
+        
 
         void GetSchoolInfo() {
             std::cout << "~School Info~" << "\n";
@@ -36,4 +37,11 @@ class School{
             std::cout << "Established: " << m_yearEstablished << "\n";
             std::cout << "-----------------------------------\n";
         }
+
+        void AddStudent(std::string &student_name, Student* student){
+            m_students[student_name] = student;
+            std::cout << "Added Student: " << student_name << "\n";
+            
+        }
+        
 };

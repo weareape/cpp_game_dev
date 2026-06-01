@@ -5,7 +5,7 @@
 int main(){
     //student 1
     std::string s1Name = "Grunt";
-    std::string s1Email = "grunt@adu.edu";
+    std::string s1Email = "grunt@agu.edu";
     
     int s1Age = 219;
     size_t s1ID = 123456;
@@ -28,8 +28,18 @@ int main(){
     std::string schoolName = "Andromeda Galaxy University";
     int schoolEstablished = 1789;
 
-    // School School1 = School (schoolID, schoolName, schoolEstablished);
-    // School1.GetSchoolInfo();
+    std::unordered_map<std::string, Student*> newStudents;
+
+    School School1 = School (schoolID, schoolName, schoolEstablished, newStudents);
+    School1.GetSchoolInfo();
+
+    std::string s1Name_to_add = "Grunt";
+    //std::string s2Name_to_add = "Chort";
+    //std::string s3Name_to_add = "Glorp";
+
+    School1.AddStudent(s1Name_to_add, &Student1);
+    //School1.AddStudent(s2Name_to_add, &Student2);
+    //School1.AddStudent(s3Name_to_add, &Student3);
 
     return 0;
 
