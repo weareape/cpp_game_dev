@@ -1,3 +1,4 @@
 {
     "cmake.sourceDirectory": "D:/Desktop/My Stuff/Learning/Rebelway/cpp/cpp_game_dev/assignments/week_two"
+    "cmake.buildDirectory": "${workspaceFolder}/assignments/week_two/build"
 }
