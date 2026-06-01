@@ -22,8 +22,10 @@ class Course{
         );
 
         void GetCourseInfo() {
+            std::cout << "~Course Info~" << "\n";
             std::cout << "Enrollment Cap: " << m_courseSizeCap << "\n";
             std::cout << "Course Name: " << m_courseName << "\n";
             std::cout << "Course Description: " << m_courseDescription << "\n";
+            std::cout << "-----------------------------------\n";
         }
 };

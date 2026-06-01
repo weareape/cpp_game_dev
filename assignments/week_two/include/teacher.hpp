@@ -10,7 +10,6 @@ class Teacher: public User{
         Teacher(
             std::string &NAME,
             std::string &EMAIL,
-            std::string &SUBJECT,
 
             int AGE,
             size_t ID,

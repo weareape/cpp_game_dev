@@ -8,7 +8,6 @@ class User{
     protected:
         std::string m_name;
         std::string m_email;
-        std::string m_subject;
 
         int m_age;
         size_t m_id;
@@ -17,7 +16,6 @@ class User{
         User(
             std::string &NAME, 
             std::string &EMAIL, 
-            std::string &SUBJECT, 
             
             int AGE, 
             size_t ID);
