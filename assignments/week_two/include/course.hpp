@@ -1,9 +1,7 @@
 #pragma once
 
-#include "student.hpp"
-#include "teacher.hpp"
 #include <string>
-#include <unordered_map>
+#include <iostream>
 
 class Course{
     private:

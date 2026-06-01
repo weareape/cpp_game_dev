@@ -3,6 +3,11 @@
 #include <cstddef>
 #include <string>
 #include <iostream>
+#include <unordered_map>
+
+#include "student.hpp"
+#include "teacher.hpp"
+#include "course.hpp"
 
 
 class School{
@@ -11,14 +16,18 @@ class School{
         
         std::string m_name;
         int m_yearEstablished;
+        std::unordered_map<std::string, Student*> m_students;
 
 
     public:
         School(
             size_t ID,
 
+
             std::string &NAME,
-            int YEARESTABLISHED);
+            int YEARESTABLISHED,
+        
+            std::unordered_map<std::string, Student* > &STUDENTS);
 
         void GetSchoolInfo() {
             std::cout << "~School Info~" << "\n";

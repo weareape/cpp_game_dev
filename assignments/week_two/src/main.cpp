@@ -28,8 +28,8 @@ int main(){
     std::string schoolName = "Andromeda Galaxy University";
     int schoolEstablished = 1789;
 
-    School School1 = School (schoolID, schoolName, schoolEstablished);
-    School1.GetSchoolInfo();
+    // School School1 = School (schoolID, schoolName, schoolEstablished);
+    // School1.GetSchoolInfo();
 
     return 0;
 
