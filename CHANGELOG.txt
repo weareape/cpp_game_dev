@@ -9,7 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-## [0.0.3] - 2026-06-10
+## [0.0.4] - 2026-06-07
+
+- week 3 ImGui assignment submit
+- set up horizontal bar that i can resize
+- horizontal bar changes on hover && mouse icon too.
+- ctrl+s prints save function.
+
+### Added
+
+## [0.0.3] - 2026-06-6
 
 - Finishing first part of week 3 update on ImGui
 - added vs code to git ignore in main and updated crd-4 branch
