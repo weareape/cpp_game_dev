@@ -1,0 +1,17 @@
+#include "raylib.h"
+#include "src/game.hpp"
+
+int main(){
+    Game game;
+
+    while (!game.ShouldClose()){
+    
+        float deltaTime = GetFrameTime();
+    
+        game.HandleInput();
+        game.Update();
+        game.Draw();
+    }
+
+    return 0;
+}
