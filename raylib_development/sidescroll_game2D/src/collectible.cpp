@@ -11,13 +11,13 @@ void Collectible::Update(float deltaTime){
         anim.Update(deltaTime);
 }
 
-void Collectible::Draw(Texture2D &envSheet){
+void Collectible::Draw(Texture2D &spriteSheet){
     if (collected)
         return;
 
     Rectangle source = anim.GetCurrentFrame();
     Rectangle dest = {position.x - radius, position.y - radius * 2.0f, radius * 2.0f};
-    DrawTexturePro(envSheet, source, dest, {0, 0}, 0, WHITE);
+    DrawTexturePro(spriteSheet, source, dest, {0, 0}, 0, WHITE);
 }
 
 bool Collectible::CheckCollision(const Rectangle &player){

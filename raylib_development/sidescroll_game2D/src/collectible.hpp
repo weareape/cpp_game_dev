@@ -15,6 +15,6 @@ struct Collectible{
 
     Collectible(Vector2 pos);
     void Update(float deltaTime);
-    void Draw(Texture2D &envSheet);
+    void Draw(Texture2D &spritSheet);
     bool CheckCollision(const Rectangle &player);
 };

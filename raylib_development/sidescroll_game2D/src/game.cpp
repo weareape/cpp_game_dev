@@ -121,7 +121,7 @@ void Game::Draw(){
 
     if (player.state == ATTACKING){
         Rectangle atk = player.GetAttackHitBox();
-        DrawRectangleRec(atk, ColorAlpha(RED, 0.3));
+        DrawRectangleRec(atk, ColorAlpha(RED, 0.3f));
     }
 
     EndMode2D();
