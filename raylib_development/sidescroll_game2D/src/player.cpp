@@ -1,14 +1,15 @@
 #include "player.hpp"
 #include "config.h"
+#include <vector>
 
 Player::Player(Texture2D &spriteSheet):
     position({100, 300}), velocity({0, 0}), width(PLAYER_SIZE_WIDTH), height(PLAYER_SIZE_HEIGHT),
     facingRight(true), isGrounded(false),
     canAttack(true), attackTimer(0),
-    state(IDLE), idleAnim({{0, 0, PLAYER_SIZE_WIDTH, PLAYER_SIZE_HEIGHT}, 4}),
-    runAnim({{0, PLAYER_SIZE_HEIGHT, PLAYER_SIZE_WIDTH, PLAYER_SIZE_HEIGHT}, 6}),
+    state(IDLE), idleAnim({{0, 0, PLAYER_SIZE_WIDTH, PLAYER_SIZE_HEIGHT}, 13}),
+    runAnim({{0, PLAYER_SIZE_HEIGHT, PLAYER_SIZE_WIDTH, PLAYER_SIZE_HEIGHT}, 8}),
     jumpAnim({{0, PLAYER_SIZE_HEIGHT * 2, PLAYER_SIZE_WIDTH, PLAYER_SIZE_HEIGHT}, 6}),
-    attackAnim({{0, PLAYER_SIZE_HEIGHT * 3, PLAYER_SIZE_WIDTH, PLAYER_SIZE_HEIGHT}, 6})
+    attackAnim({{0, PLAYER_SIZE_HEIGHT * 3, PLAYER_SIZE_WIDTH, PLAYER_SIZE_HEIGHT}, 10})
 {
     currentAnim = &idleAnim;
 }
@@ -39,10 +40,10 @@ void Player::Update(float deltaTime, const std::vector<Rectangle> &platforms){
     }
 
     //Attacking
-    if (IsKeyDown(KEY_J) && canAttack){
+    if (IsKeyDown(KEY_F) && canAttack){
         state = ATTACKING;
         canAttack = false;
-        attackTimer = 0.4;
+        attackTimer = 0.4f;
     }
 
     //Gravity
@@ -78,7 +79,7 @@ void Player::Update(float deltaTime, const std::vector<Rectangle> &platforms){
                 position.x = platform.x - width;
             }
             else if (velocity.x < 0){
-                position.x = plaftform.x + platform.width;
+                position.x = platform.x + platform.width;
             }
 
         }
@@ -125,13 +126,30 @@ void Player::Update(float deltaTime, const std::vector<Rectangle> &platforms){
 }
 
 void Player::Draw(Texture2D &spriteSheet){
+    Rectangle source = currentAnim->GetCurrentFrame();
 
+    if (!facingRight)
+        source.width = -source.width;
+
+    Rectangle dest = {position.x, position.y, width, height};
+    Vector2 origin = {0,0};
+
+    DrawTexturePro(spriteSheet, source, dest, origin, 0.0f, WHITE);
 }
 
 Rectangle Player::GetBounds() const{
-
+    return {position.x, position.y, width, height};
 }
 
 Rectangle Player::GetAttackHitBox() const{
+    if (state != ATTACKING)
+        return {0,0,0,0};
 
+    float attackRange = 30.0f;
+    if (facingRight){
+        return {position.x + width, position.y + 10, attackRange, height - 20};
+    }
+    else{
+        return {position.x - attackRange, position.y + 10, attackRange, height - 20};
+    }
 }

@@ -10,6 +10,6 @@ struct Animation{
     float timer;
 
     Animation(Rectangle firstFrame, int count);
-    void update(float deltaTime);
+    void Update(float deltaTime);
     Rectangle GetCurrentFrame() const;
-}
+};

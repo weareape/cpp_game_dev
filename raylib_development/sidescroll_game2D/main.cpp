@@ -1,4 +1,5 @@
 #include "raylib.h"
+#include "src/config.h"
 #include "src/game.hpp"
 
 int main(){
@@ -9,7 +10,7 @@ int main(){
         float deltaTime = GetFrameTime();
     
         game.HandleInput();
-        game.Update();
+        game.Update(deltaTime);
         game.Draw();
     }
 

@@ -9,7 +9,7 @@
 struct Player{
     Vector2 position;
     Vector2 velocity;
-    int width, height;
+    float width, height;
     float attackTimer;
     bool facingRight;
     bool isGrounded;
